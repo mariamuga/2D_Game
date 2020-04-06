@@ -1,5 +1,7 @@
 class Game {
-  constructor() {}
+  constructor() {
+    
+  }
 
   init() {
     this.background = new Background();

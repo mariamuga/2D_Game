@@ -8,5 +8,10 @@ function setup() {
 }
 function draw() {
   game.display();
-
+}
+function keyPressed() {
+  let spaceBarCode = 32;
+  if (keyCode === spaceBarCode) {
+    game.player.jump();
+  }
 }

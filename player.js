@@ -8,7 +8,7 @@ class Player {
     this.height = this.img.height;
     console.log(this.height);
     this.width = this.img.width;
-    this.x = 50;
+    this.x = 100;
     this.y = 100;
   }
   jump() {
