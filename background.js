@@ -1,6 +1,6 @@
 class Background {
   constructor() {
-    // this.random = 0;
+    this.random = 0;
     this.imgs = [
       //here we set up the background images
       {
@@ -26,47 +26,57 @@ class Background {
       {
         src: loadImage("game-resources/Background/06_Forest.png"),
         x: 0,
-        speed: 0,
+        speed: 4,
       },
       {
         src: loadImage("game-resources/Background/05_Particles.png"),
         x: 0,
-        speed: 0,
+        speed: 5,
       },
       {
         src: loadImage("game-resources/Background/04_Forest.png"),
         x: 0,
-        speed: 0,
+        speed: 6,
       },
       {
         src: loadImage("game-resources/Background/03_Particles.png"),
         x: 0,
-        speed: 0,
+        speed: 7,
       },
-      {
+    /*   {
         src: loadImage("game-resources/Background/02_Bushes.png"),
         x: 0,
-        speed: 0,
-      },
-      {
+        speed: 8,
+      }, */
+      /* {
         src: loadImage("game-resources/Background/01_Mist.png"),
         x: 0,
-        speed: 0,
-      },
+        speed: 9,
+      }, */
     ];
   }
+
+  //Function outside of the constructor to move images
+  move(img) {
+    img.x -= img.speed;
+
+    // image(we get the source of image, x coordinate, y coordinate )
+    image(img.src, img.x, 0);
+    image(img.src, img.x + width, 0);
+    if (img.x <= -width) {
+      img.x = 0;
+    }
+  }
+
+  //Function outside of the constructor to display images
+
   display() {
     this.imgs.forEach((singleImage) => {
-      /*   this.move(image); */
       // console.log("image");
-      console.log(singleImage);
-      image(singleImage.src, 0, 0, 1920, 500);
+      /* console.log(singleImage);
+      image(singleImage.src, 0, 0, 960, 540); */
+
+      this.move(singleImage);
     });
   }
 }
-
-const array = [1, 2, 3];
-function dupla(arrayExample) {
-  return arrayExample.map((number) => (number *= 2));
-}
-let arr2 = dupla(array);
