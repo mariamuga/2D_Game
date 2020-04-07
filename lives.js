@@ -30,5 +30,7 @@ class Lives {
 
   display() {
     image(this.img, 0, 0);
+    image(this.img, 30, 0);
+    image(this.img, 60, 0);
   }
 }

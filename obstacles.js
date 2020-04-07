@@ -11,7 +11,7 @@ class Obstacles {
 
   checkCollision(player) {
     let left = this.x;
-    let right = this.x + this.width;
+    let right = this.x + this.width; 
     let playerLeft = player.x;
     let playerRight = player.x + player.width;
 
