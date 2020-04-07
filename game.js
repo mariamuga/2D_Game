@@ -1,7 +1,8 @@
 class Game {
   constructor() {
     this.obstacles = [];
-    this.lives = 3;
+    this.groundobstacles = [];
+    
   }
 
   init() {
@@ -9,6 +10,7 @@ class Game {
     this.player = new Player();
     this.frontlayer = new Frontlayer();
     this.lives = new Lives();
+  
   }
 
   setup() {
@@ -22,7 +24,7 @@ class Game {
     this.player.display();
     
 
-    if (frameCount % 100 === 0) {
+   /*  if (frameCount % 100 === 0) {
       this.obstacles.push(new Obstacles());
     }
 
@@ -32,7 +34,19 @@ class Game {
 
     this.obstacles = this.obstacles.filter((obstacle) => {
       return !obstacle.checkCollision(this.player);
+    }); */
+
+
+    if (frameCount % 100 === 0) {
+      this.groundobstacles.push(new GroundObstacles());
+    }
+
+    this.groundobstacles.forEach((ground) => {
+      ground.display();
     });
+
+   
+
     this.frontlayer.display();
     this.lives.display();
   }

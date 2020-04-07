@@ -7,7 +7,8 @@ class Obstacles {
     this.y = random(50, height - 100);
     //this.y = random(0, height - this.height);
     this.img = loadImage("game-resources/Obstacles/spiky_wood.png");
-  }
+
+}
 
   checkCollision(player) {
     let left = this.x;
