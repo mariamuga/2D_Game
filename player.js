@@ -6,8 +6,8 @@ class Player {
   }
   setup() {
     this.height = this.img.height;
-    console.log(this.height);
     this.width = this.img.width;
+    this.heightCheck = height - this.height - this.height/3;
     this.x = 200;
     this.y = 200;
   }
@@ -18,9 +18,9 @@ class Player {
     this.speed += this.gravity;
     this.y += this.speed;
 
-    if (this.y > height - this.height) {
-      this.y = height - this.height;
+    if (this.y  > this.heightCheck) {
+      this.y = this.heightCheck;
     }
-    image(this.img, this.x, this.y, 100, 100);
+    image(this.img, this.x, this.y, this.width, this.height);
   }
 }

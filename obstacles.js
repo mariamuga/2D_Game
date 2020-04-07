@@ -5,6 +5,7 @@ class Obstacles {
     this.x = width;
     //GIVING RANDOM NUMBER TO THE this.y
     this.y = random(0, height - this.height);
+    //this.y = random(0, height - this.height);
     this.img = loadImage("game-resources/Obstacles/spiky_wood.png");
   }
 
