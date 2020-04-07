@@ -6,6 +6,7 @@ class Game {
   init() {
     this.background = new Background();
     this.player = new Player();
+    this.frontlayer = new Frontlayer();
   }
 
   setup() {
@@ -14,10 +15,13 @@ class Game {
 
   display() {
     clear();
+
     this.background.display();
     this.player.display();
+    this.frontlayer.display();
     
-    if (frameCount % 70 === 0) {
+    
+    if (frameCount % 100 === 0) {
       this.obstacles.push(new Obstacles());
     } 
 

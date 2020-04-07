@@ -21,6 +21,6 @@ class Player {
     if (this.y > height - this.height) {
       this.y = height - this.height;
     }
-    image(this.img, this.x, this.y);
+    image(this.img, this.x, this.y,150,150);
   }
 }
