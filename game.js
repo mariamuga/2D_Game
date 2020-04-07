@@ -18,20 +18,18 @@ class Game {
 
     this.background.display();
     this.player.display();
-    this.frontlayer.display();
-    
-    
+
     if (frameCount % 100 === 0) {
       this.obstacles.push(new Obstacles());
-    } 
+    }
 
     this.obstacles.forEach((obstacle) => {
       obstacle.display();
-    }); 
+    });
 
     this.obstacles = this.obstacles.filter((obstacle) => {
       return !obstacle.checkCollision(this.player);
-    }); 
-  
-}
+    });
+    this.frontlayer.display();
+  }
 }

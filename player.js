@@ -8,8 +8,8 @@ class Player {
     this.height = this.img.height;
     console.log(this.height);
     this.width = this.img.width;
-    this.x = 100;
-    this.y = 100;
+    this.x = 200;
+    this.y = 200;
   }
   jump() {
     this.speed = -5;
@@ -21,6 +21,6 @@ class Player {
     if (this.y > height - this.height) {
       this.y = height - this.height;
     }
-    image(this.img, this.x, this.y,150,150);
+    image(this.img, this.x, this.y, 100, 100);
   }
 }
