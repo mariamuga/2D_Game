@@ -4,14 +4,14 @@ class Obstacles {
     this.width = 25;
     this.x = width;
     //GIVING RANDOM NUMBER TO THE this.y
-    this.y = random(0, height - this.height);
+    this.y = random(50, height - 100);
     //this.y = random(0, height - this.height);
     this.img = loadImage("game-resources/Obstacles/spiky_wood.png");
   }
 
   checkCollision(player) {
     let left = this.x;
-    let right = this.x + this.width; 
+    let right = this.x + this.width;
     let playerLeft = player.x;
     let playerRight = player.x + player.width;
 
