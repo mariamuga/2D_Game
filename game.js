@@ -1,6 +1,6 @@
 class Game {
   constructor() {
-    
+    this.obstacles = [];
   }
 
   init() {
@@ -16,5 +16,18 @@ class Game {
     clear();
     this.background.display();
     this.player.display();
-  }
+    
+    if (frameCount % 70 === 0) {
+      this.obstacles.push(new Obstacles());
+    } 
+
+    this.obstacles.forEach((obstacle) => {
+      obstacle.display();
+    }); 
+
+    this.obstacles = this.obstacles.filter((obstacle) => {
+      return !obstacle.checkCollision(this.player);
+    }); 
+  
+}
 }
