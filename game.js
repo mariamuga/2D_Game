@@ -24,7 +24,7 @@ class Game {
     this.player.display();
     
 
-   /*  if (frameCount % 100 === 0) {
+     if (frameCount % 100 === 0) {
       this.obstacles.push(new Obstacles());
     }
 
@@ -34,7 +34,7 @@ class Game {
 
     this.obstacles = this.obstacles.filter((obstacle) => {
       return !obstacle.checkCollision(this.player);
-    }); */
+    }); 
 
 
     if (frameCount % 100 === 0) {

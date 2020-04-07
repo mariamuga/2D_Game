@@ -4,7 +4,7 @@ class GroundObstacles {
 
     this.x = width;
     //GIVING RANDOM NUMBER TO THE this.y
-    this.y = random(425, 425);
+    this.y = random(427, 427);
   }
 
   display() {
