@@ -7,7 +7,7 @@ class Player {
   setup() {
     this.height = this.img.height;
     this.width = this.img.width;
-    this.heightCheck = height - this.height - this.height/3;
+    this.heightCheck = height - this.height - this.height/1.8;
     this.x = 200;
     this.y = 200;
   }

@@ -1,20 +1,27 @@
 let game = new Game();
-
-function keyPressed() {
-  let spaceBarCode = 32;
-  if (keyCode === spaceBarCode) {
-    game.player.jump();
-  }
-}
+let WIDTH = 960;
+let HEIGHT = 540;
 
 function preload() {
   game.init();
 }
 function setup() {
-  createCanvas(960, 540);
+  createCanvas(WIDTH, HEIGHT);
   game.setup();
 }
 function draw() {
-  frameRate(70);
   game.display();
+  frameRate(70);
+}
+
+function keyPressed() {
+  if (keyCode === 32) {
+    game.player.jump();
+  }
+  if (keyCode === 13) {
+    game.start = true;
+  }
+  if (keyCode === 65 && game.finished === true) {
+    window.location.reload();
+  }
 }

@@ -4,11 +4,10 @@ class Obstacles {
     this.width = 25;
     this.x = width;
     //GIVING RANDOM NUMBER TO THE this.y
-    this.y = random(50, height - 100);
+    this.y = random(50, height - 150);
     //this.y = random(0, height - this.height);
-    this.img = loadImage("game-resources/Obstacles/spiky_wood.png");
-
-}
+    this.img = loadImage("game-resources/Obstacles/swinging_spike_stick.png");
+  }
 
   checkCollision(player) {
     let left = this.x;
@@ -37,6 +36,6 @@ class Obstacles {
   display() {
     //Moving the OBSTACLE TO THE LEFT
     this.x--;
-    image(this.img, this.x, this.y, 35, 35);
+    image(this.img, this.x, this.y, 55, 15);
   }
 }

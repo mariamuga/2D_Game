@@ -1,8 +1,8 @@
 class Game {
   constructor() {
+    this.ground = [];
     this.obstacles = [];
-    this.groundobstacles = [];
-    
+    this.lives = 3;
   }
 
   init() {
@@ -10,7 +10,6 @@ class Game {
     this.player = new Player();
     this.frontlayer = new Frontlayer();
     this.lives = new Lives();
-  
   }
 
   setup() {
@@ -21,10 +20,9 @@ class Game {
     clear();
 
     this.background.display();
-    this.player.display();
-    
+    this.lives.display();
 
-     if (frameCount % 100 === 0) {
+    if (frameCount % 150 === 0) {
       this.obstacles.push(new Obstacles());
     }
 
@@ -34,20 +32,20 @@ class Game {
 
     this.obstacles = this.obstacles.filter((obstacle) => {
       return !obstacle.checkCollision(this.player);
-    }); 
-
-
-    if (frameCount % 100 === 0) {
-      this.groundobstacles.push(new GroundObstacles());
-    }
-
-    this.groundobstacles.forEach((ground) => {
-      ground.display();
     });
 
-   
+    if (frameCount % 300 === 0) {
+      this.ground.push(new GroundObstacles());
+    }
+    this.ground.forEach((obstacle) => {
+      obstacle.display();
+    });
 
+    this.ground = this.ground.filter((obstacle) => {
+      return !obstacle.checkCollision(this.player);
+    });
+
+    this.player.display();
     this.frontlayer.display();
-    this.lives.display();
   }
 }
