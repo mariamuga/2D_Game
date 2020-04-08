@@ -8,11 +8,11 @@ class Game {
   }
 
   init() {
-    this.startPicture = loadImage("./game-resources/LP/zell.jpg");
     this.background = new Background();
     this.player = new Player();
     this.frontlayer = new Frontlayer();
     this.lives = new Lives();
+    this.startPhoto = loadImage("game-resources/LP/zell.jpg");
   }
 
   setup() {
@@ -50,9 +50,12 @@ class Game {
     });
 
     if (this.finished) {
-      fill("blue");
+      //rect(300, 40, 300, 100);
+      fill("orange");
+      textStyle(BOLD);
       textSize(20);
-      text("U DED BRUH, press A to restart", 200, 130);
+      text("Sorry, You must try harder.", 300, 130);
+      text("PRESS A TO RESTART", 330, 230);
       localStorage.setItem("gameScore", score);
       noLoop();
     }
