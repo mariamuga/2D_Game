@@ -4,6 +4,7 @@ class Game {
     this.obstacles = [];
     this.lives = 3;
     this.finished = false;
+    this.start = false;
   }
 
   init() {
