@@ -20,16 +20,17 @@ function draw() {
   if (game.start === true) {
     score++;
     game.display();
-    fill("blue");
+    fill("white");
     textSize(20);
     text(`The Score is: ${score}`, 100, 300);
 
   } else {
-    fill("green");
+  
+    image(game.startPicture, 300, 300);
     rect(0, 0, WIDTH, HEIGHT);
-    fill("blue");
+    //fill("blue");
     textSize(20);
-    text('"Press enter to start the game"', 10, 30);
+    text('"Press enter to start the game."', 10, 30);
   }
   //game.display();
   //frameRate(70); 

@@ -8,6 +8,7 @@ class Game {
   }
 
   init() {
+    this.startPicture = loadImage("./game-resources/LP/zell.jpg");
     this.background = new Background();
     this.player = new Player();
     this.frontlayer = new Frontlayer();
