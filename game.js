@@ -3,6 +3,7 @@ class Game {
     this.ground = [];
     this.obstacles = [];
     this.lives = 3;
+    this.finished = false;
   }
 
   init() {
@@ -22,28 +23,37 @@ class Game {
     this.background.display();
     this.lives.display();
 
-    if (frameCount % 150 === 0) {
+    if (frameCount % 180 === 0) {
       this.obstacles.push(new Obstacles());
     }
 
     this.obstacles.forEach((obstacle) => {
       obstacle.display();
-    });
 
-    this.obstacles = this.obstacles.filter((obstacle) => {
-      return !obstacle.checkCollision(this.player);
+      if (obstacle.checkCollision(this.player)) {
+        this.finished = true;
+      }
     });
 
     if (frameCount % 300 === 0) {
       this.ground.push(new GroundObstacles());
     }
-    this.ground.forEach((obstacle) => {
-      obstacle.display();
+
+    this.ground.forEach((groundobstacle) => {
+      groundobstacle.display();
+
+      if (groundobstacle.checkCollision(this.player)) {
+        this.finished = true;
+      }
     });
 
-    this.ground = this.ground.filter((obstacle) => {
-      return !obstacle.checkCollision(this.player);
-    });
+    if (this.finished) {
+      fill("blue");
+      textSize(20);
+      text("U DED BRUH, press A to restart", 200, 130);
+      localStorage.setItem("gameScore", score);
+      noLoop();
+    }
 
     this.player.display();
     this.frontlayer.display();
