@@ -11,7 +11,7 @@ class Game {
   }
 
   init() {
-    this.startcover = loadImage("game-resources/LP/zell.jpg");
+    this.startcover = loadImage("game-resources/Cover/StartCover.png");
     this.endcover = loadImage("game-resources/Cover/CoverEnd.png");
     this.jumpSound = loadSound("game-resources/Music/jump.mp3");
     this.sound = loadSound("game-resources/Music/mistery.mp3");
@@ -19,7 +19,6 @@ class Game {
     this.player = new Player();
     this.frontlayer = new Frontlayer();
     //this.lives = new Lives();
-   
   }
 
   setup() {
