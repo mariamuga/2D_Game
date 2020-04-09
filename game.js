@@ -25,10 +25,16 @@ class Game {
 
   display() {
     clear();
-//this.sound.play();
-      if (game.start === true){
+
+   /*  if (!game.start === false ){
       this.sound.play();
-    }   
+      noLoop();
+    } */
+   
+//this.sound.play();
+/*       if (game.start === true){
+      this.sound.play();
+    }    */
 
    /*  if (!game.sound.playing) {
       game.sound.play();
@@ -76,5 +82,6 @@ class Game {
 
     this.player.display();
     this.frontlayer.display();
+  
   }
 }

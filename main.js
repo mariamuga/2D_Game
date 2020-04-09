@@ -8,6 +8,7 @@ function preload() {
 }
 function setup() {
   createCanvas(WIDTH, HEIGHT);
+  //game.sound.play();
   game.setup();
 }
 function draw() {
@@ -45,6 +46,7 @@ function keyPressed() {
   }
   if (keyCode === 13) {
     game.start = true;
+    game.sound.play();
   }
   if (keyCode === 65 && game.finished === true) {
     window.location.reload();
