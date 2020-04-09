@@ -6,9 +6,11 @@ class Game {
     this.finished = false;
     this.start = false;
     this.sound;
+    this.jumpSound;
   }
 
   init() {
+    this.jumpSound = loadSound("game-resources/Music/jump.mp3");
     this.sound= loadSound ("game-resources/Music/mistery.mp3");
     this.background = new Background();
     this.player = new Player();
@@ -23,10 +25,16 @@ class Game {
 
   display() {
     clear();
-    
-    if (game.start === true){
+//this.sound.play();
+      if (game.start === true){
       this.sound.play();
-    } 
+    }   
+
+   /*  if (!game.sound.playing) {
+      game.sound.play();
+    }
+    //game on
+    playing = true; */
     
     this.background.display();
     this.lives.display();
