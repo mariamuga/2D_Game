@@ -5,14 +5,16 @@ class Game {
     this.lives = 3;
     this.finished = false;
     this.start = false;
+    this.sound;
   }
 
   init() {
+    this.sound= loadSound ("game-resources/Music/mistery.mp3");
     this.background = new Background();
     this.player = new Player();
     this.frontlayer = new Frontlayer();
     this.lives = new Lives();
-    this.startPhoto = loadImage("game-resources/LP/zell.jpg");
+    //this.startPhoto = loadImage("game-resources/LP/zell.jpg");
   }
 
   setup() {
@@ -21,7 +23,11 @@ class Game {
 
   display() {
     clear();
-
+    
+    if (game.start === true){
+      this.sound.play();
+    } 
+    
     this.background.display();
     this.lives.display();
 

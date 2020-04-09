@@ -11,15 +11,19 @@ function setup() {
   game.setup();
 }
 function draw() {
+   
   if (game.start === true) {
     score++;
+    //game.sound.play();
     game.display();
     textStyle(BOLD);
     fill(134,77,38);
     textSize(20);
     text(`Distance: ${score} meters`, 700, 30);
+    
+    
   } else {
-    image(game.startPhoto, 300, 300);
+    //image(game.startPhoto, 300, 300);
     rect(0, 0, WIDTH, HEIGHT);
 
     textFont("Helvetica");
@@ -34,7 +38,13 @@ function draw() {
 
 function keyPressed() {
   if (keyCode === 32) {
-    game.player.jump();
+      game.player.jump();
+  //  game.jumpSound.play();
+  if (!game.sound.playing) {
+    game.sound.togglePlaying();
+  }
+  //game on
+  playing = true;
   }
   if (keyCode === 13) {
     game.start = true;
