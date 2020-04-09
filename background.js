@@ -43,16 +43,7 @@ class Background {
         x: 0,
         speed: 7,
       },
-      /* {
-        src: loadImage("game-resources/Background/02_Bushes.png"),
-        x: 0,
-        speed: 8,
-      },
-      {
-        src: loadImage("game-resources/Background/01_Mist.png"),
-        x: 0,
-        speed: 9,
-      },  */
+  
     ];
   }
 

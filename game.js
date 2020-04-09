@@ -7,11 +7,13 @@ class Game {
     this.start = false;
     this.sound;
     this.jumpSound;
+    this.endcover;
   }
 
   init() {
+    this.endcover = loadImage("game-resources/Cover/CoverEnd.png");
     this.jumpSound = loadSound("game-resources/Music/jump.mp3");
-    this.sound= loadSound ("game-resources/Music/mistery.mp3");
+    this.sound = loadSound("game-resources/Music/mistery.mp3");
     this.background = new Background();
     this.player = new Player();
     this.frontlayer = new Frontlayer();
@@ -26,22 +28,6 @@ class Game {
   display() {
     clear();
 
-   /*  if (!game.start === false ){
-      this.sound.play();
-      noLoop();
-    } */
-   
-//this.sound.play();
-/*       if (game.start === true){
-      this.sound.play();
-    }    */
-
-   /*  if (!game.sound.playing) {
-      game.sound.play();
-    }
-    //game on
-    playing = true; */
-    
     this.background.display();
     this.lives.display();
 
@@ -69,19 +55,13 @@ class Game {
       }
     });
 
+    this.player.display();
+    this.frontlayer.display();
+
     if (this.finished) {
-      //rect(300, 40, 300, 100);
-      fill("orange");
-      textStyle(BOLD);
-      textSize(20);
-      text("Sorry, You must try harder.", 300, 130);
-      text("PRESS A TO RESTART", 330, 230);
+      image(this.endcover, 0, 0, WIDTH, HEIGHT);
       localStorage.setItem("gameScore", score);
       noLoop();
     }
-
-    this.player.display();
-    this.frontlayer.display();
-  
   }
 }

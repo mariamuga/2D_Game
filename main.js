@@ -8,13 +8,11 @@ function preload() {
 }
 function setup() {
   createCanvas(WIDTH, HEIGHT);
-  //game.sound.play();
   game.setup();
 }
 function draw() {
   if (game.start === true) {
     score++;
-    //game.sound.play();
     game.display();
     textStyle(BOLD);
     fill(134, 77, 38);
@@ -38,11 +36,6 @@ function keyPressed() {
   if (keyCode === 32) {
     game.player.jump();
     game.jumpSound.play();
-    /* if (!game.sound.playing) {
-    game.sound.play();
-  }
-  //game on
-  playing = true; */
   }
   if (keyCode === 13) {
     game.start = true;
