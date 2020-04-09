@@ -3,9 +3,9 @@ class Obstacles {
     this.height = 25;
     this.width = 25;
     this.x = width;
-    //GIVING RANDOM NUMBER TO THE this.y
+    
     this.y = random(50, height - 150);
-    //this.y = random(0, height - this.height);
+ 
     this.img = loadImage("game-resources/Obstacles/swinging_spike_stick.png");
   }
 

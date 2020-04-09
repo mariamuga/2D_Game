@@ -2,7 +2,7 @@ class Game {
   constructor() {
     this.ground = [];
     this.obstacles = [];
-    this.lives = 3;
+    //this.lives = 3;
     this.finished = false;
     this.start = false;
     this.sound;
@@ -11,14 +11,15 @@ class Game {
   }
 
   init() {
+    this.startcover = loadImage("game-resources/LP/zell.jpg");
     this.endcover = loadImage("game-resources/Cover/CoverEnd.png");
     this.jumpSound = loadSound("game-resources/Music/jump.mp3");
     this.sound = loadSound("game-resources/Music/mistery.mp3");
     this.background = new Background();
     this.player = new Player();
     this.frontlayer = new Frontlayer();
-    this.lives = new Lives();
-    //this.startPhoto = loadImage("game-resources/LP/zell.jpg");
+    //this.lives = new Lives();
+   
   }
 
   setup() {
@@ -29,7 +30,7 @@ class Game {
     clear();
 
     this.background.display();
-    this.lives.display();
+    //this.lives.display();
 
     if (frameCount % 180 === 0) {
       this.obstacles.push(new Obstacles());

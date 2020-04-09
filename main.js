@@ -3,6 +3,7 @@ let WIDTH = 960;
 let HEIGHT = 540;
 let score = 0;
 
+
 function preload() {
   game.init();
 }
@@ -19,17 +20,13 @@ function draw() {
     textSize(20);
     text(`Distance: ${score} meters`, 700, 30);
   } else {
-    //image(game.startPhoto, 300, 300);
-    rect(0, 0, WIDTH, HEIGHT);
-
+    image(game.startcover, 0, 0, WIDTH, HEIGHT);
     textFont("Helvetica");
     textStyle(BOLD);
     textSize(20);
     text('"Press enter to start the game."', 10, 30);
     text('"Press enter to start the game."', 150, 130);
   }
-  //game.display();
-  //frameRate(70);
 }
 
 function keyPressed() {
@@ -39,7 +36,7 @@ function keyPressed() {
   }
   if (keyCode === 13) {
     game.start = true;
-    game.sound.play();
+     //game.sound.play();
   }
   if (keyCode === 65 && game.finished === true) {
     window.location.reload();
